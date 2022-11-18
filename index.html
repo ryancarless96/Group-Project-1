@@ -10,8 +10,10 @@
 
 <body>
     <header>
+        <div id="start-screen">
         <div class="large-font"> Quiz Game Challenge</div>
         <button class="start-btn"> Start</button>
+    </div>
     </header>
     <div class="panel">
     <div class="result">
@@ -19,30 +21,23 @@
     </div>
     <main>
         <section>
-        <div class="selection-screen">
+        <div id="selection-screen" class="hide">
             <div class="genres"> 
-                Genre 1
-                Genre 2
-                Genre 3
+                <button class="math-btn">Genre 1</button>
+                <button class="history-btn">Genre 2</button>
+                <button class="science-btn">Genre 3</button>
             </div>
+        </div>
         </section>
-            <div class="question-screen">
-                <div class=""> </div>
-                <div class="quiz-questions" id="question">Question.
+            <div id="question-screen" class="hide">
+                <div id="question" class="quiz-questions" >Question.</div>
+            <div class="options-screen"></div>
+                <button class="button_1">Answer 1</button>
+                <button class="button_2">Answer 2</button>
+                <button class="button_3">Answer 3</button>
+                <button class="button_4">Answer 4</button>
             </div>
-        <section>
-            <div class="options-screen">
-            </div>
-            <button id="button_2">Answer 1</button>
-          </div>
-                <button id="button_3">Answer 2</button>
-        </div>
-              <button id="button_4">Answer 3</button>
-        </div>
-                <button id="button_5">Answer 4</button>
-          </section>
-            </div>
-            <div class="quiz-results">
+            <div id="quiz-results" class="hide">
                 <div class="win-loss-container">
                     <div>
                         <h2> Wins: <span class="win">0</span>
@@ -58,7 +53,6 @@
                     </div>
                 </div>
             </div>
-        </section>
     </main>
 
     <script src=".assets/js/script.js"></script>
