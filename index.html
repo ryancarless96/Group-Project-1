@@ -11,32 +11,35 @@
 <body>
     <header>
         <div id="start-screen">
-        <div class="large-font"> Quiz Game Challenge</div>
-        <button class="start-btn"> Start</button>
-    </div>
+            <div class="large-font"> Quiz Game Challenge</div>
+            <button class="start-btn"> Start</button>
+        </div>
     </header>
-    <div class="panel">
-    <div class="result">
-    </div>
-    </div>
-    <main>
-        <section>
-        <div id="selection-screen" class="hide">
-            <div class="genres"> 
-                <button class="math-btn">Genre 1</button>
-                <button class="history-btn">Genre 2</button>
-                <button class="science-btn">Genre 3</button>
+    <nav>
+        <div class="panel">
+            <div class="result">
             </div>
         </div>
+        <section>
+            <div id="selection-screen" class="hide">
+                <div class="genres">
+                    <button class="math-btn">Genre 1</button>
+                    <button class="history-btn">Genre 2</button>
+                    <button class="science-btn">Genre 3</button>
+                </div>
+            </div>
         </section>
+        <article>
             <div id="question-screen" class="hide">
-                <div id="question" class="quiz-questions" >Question.</div>
-            <div class="options-screen"></div>
+                <div id="question" class="quiz-questions">Question.</div>
+                <div class="options-screen"></div>
                 <button class="button_1">Answer 1</button>
                 <button class="button_2">Answer 2</button>
                 <button class="button_3">Answer 3</button>
                 <button class="button_4">Answer 4</button>
             </div>
+        </article>
+        <footer>
             <div id="quiz-results" class="hide">
                 <div class="win-loss-container">
                     <div>
@@ -47,14 +50,15 @@
                     <button class="reset-button"> Reset </button>
                 </div>
                 <div class="quiz timer">
-                    <div class = "timer-text">
+                    <div class="timer-text">
                         <div class="large-font timer-count">60</div>
                         <h3> seconds remaining </h3>
                     </div>
                 </div>
             </div>
-    </main>
-
+        </footer>
+    </nav>
     <script src=".assets/js/script.js"></script>
 </body>
+
 </html>
