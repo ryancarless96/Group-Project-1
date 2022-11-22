@@ -1,0 +1,17 @@
+main {
+
+}
+
+.large-font {
+    text-align: center;
+    text-decoration: solid;
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hide{
+    display:none;
+}
