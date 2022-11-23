@@ -78,6 +78,18 @@ function genretransition(){
     questionscreen.classList.add("hide");
     quizresults.classList.add("hide");
 }
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '51de4ff89emsh832450e987c5f19p1b38e8jsnec37dd644ea6',
+		'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+	}
+};
+
+fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
 
 function questransition(){
     startscreen.classList.add("hide");
