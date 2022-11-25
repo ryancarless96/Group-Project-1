@@ -1,4 +1,3 @@
-claudine
 body {
     background-image: url('../images/trivia-game-background.jpeg');
     background-repeat: no-repeat;
@@ -31,21 +30,4 @@ body {
     .hide{
     display:none;
     }
-main {
 
-}
-
-.large-font {
-    text-align: center;
-    text-decoration: solid;
-}
-
-.genres {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.hide{
-    display:none;
-}
-main
