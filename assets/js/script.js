@@ -169,16 +169,6 @@ const options = {
     }
 };
 
-fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-
-fetch('https://en.wikipedia.org/w/api.php')
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-
 function questransition() {
     startscreen.classList.add("hide");
     selectScreen.classList.add("hide");
@@ -198,3 +188,13 @@ startbutton.addEventListener("click",genretransition);
 mathbutton.addEventListener("click",  mathquiz);
 historybutton.addEventListener("click", historyquiz);
 sciencebutton.addEventListener("click", sciencequiz);
+
+fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+fetch('https://en.wikipedia.org/w/api.php')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
