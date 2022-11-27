@@ -45,11 +45,11 @@ let answerHistory = [
     "B.Milano"
 ];
 let choicesHistory = [
-    ["A.The Civil War","B.World War 2","C.The Korean War", "D.The England and Zanzibar War"],
-    ["A.Brutus","B.Longinus", "C.A and B", "D.Cleopatra"],
-    ["A.The aftermath of World War II","B.The cold air occupying European countries","C.The rivalry between the United States and the Soviet Union","D.The Race to reach the Moon"],
-    ["A.Raphael","B.Michealangelo","C.Donatello","D.Leonardo"],
-    ["A.New York City", "B.Milano","C.Spain","D.China"]
+    ["A.The Civil War", "B.World War 2", "C.The Korean War", "D.The England and Zanzibar War"],
+    ["A.Brutus", "B.Longinus", "C.A and B", "D.Cleopatra"],
+    ["A.The aftermath of World War II", "B.The cold air occupying European countries", "C.The rivalry between the United States and the Soviet Union", "D.The Race to reach the Moon"],
+    ["A.Raphael", "B.Michealangelo", "C.Donatello", "D.Leonardo"],
+    ["A.New York City", "B.Milano", "C.Spain", "D.China"]
 ];
 let questionScience = [
     "Which is the most abundant element in the universe?",
@@ -66,11 +66,11 @@ let answerScience = [
     "Blue Whale"
 ];
 let choicesScience = [
-    ["Hydrogen","Oxygen","Liithium", "Boron"],
-    ["Rock","Diamond", "Crystal", "Dirt"],
-    ["Ten","Five","Eight","Seven"],
-    ["3","5","6","8"],
-    ["Hippo", "Blue Whale","Lion","Elephant"]
+    ["Hydrogen", "Oxygen", "Liithium", "Boron"],
+    ["Rock", "Diamond", "Crystal", "Dirt"],
+    ["Ten", "Five", "Eight", "Seven"],
+    ["3", "5", "6", "8"],
+    ["Hippo", "Blue Whale", "Lion", "Elephant"]
 ];
 
 //question id and answer buttons for quiz game
@@ -161,19 +161,36 @@ function genretransition(){
     questionscreen.classList.add("hide");
     quizresults.classList.add("hide");
 }
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '51de4ff89emsh832450e987c5f19p1b38e8jsnec37dd644ea6',
+        'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+    }
+};
 
-function questransition(){
+fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+fetch('https://en.wikipedia.org/w/api.php')
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+
+function questransition() {
     startscreen.classList.add("hide");
     selectScreen.classList.add("hide");
     questionscreen.classList.remove("hide");
     quizresults.classList.add("hide");
 }
 
-function resultransition(){
+function resultransition() {
     startscreen.classList.add("hide");
     selectScreen.classList.add("hide");
     questionscreen.classList.add("hide");
-    quizresults.classList.remove("hide"); 
+    quizresults.classList.remove("hide");
 }
 
 //Hide Start Screen, Selection Screen, Question Screen, Quiz-Results
