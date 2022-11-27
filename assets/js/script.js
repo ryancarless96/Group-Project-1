@@ -7,7 +7,8 @@ var startscreen = document.querySelector("#start-screen");
 var selectScreen = document.querySelector("#selection-screen");
 var questionscreen = document.querySelector("#question-screen");
 var quizresults = document.querySelector("#quiz-results");
-
+var wins = document.querySelector(".win");
+var losses = document.querySelector(".lose");
 let questionMath = [
     "What is the formula for the pythagorean theorem?",
     "What is the formula for slope?",
@@ -23,7 +24,7 @@ let answerMath = [
     "V = (1/3)pi*h*radius^2"
 ];
 let choicesMath = [
-    ["a+b=c","a^2+b^2 = c^2","(a/2)+(b/2)=(c/2)"],
+    ["a+b=c","a^2+b^2 = c^2","(a/2)+(b/2)=(c/2)", "a=b=c"],
     ["m = (x1-y1)/(x2-y2)","m = (y/y)-(x/x)", "m = y2-1/x2-1", "m = (y2-y1)/(x2-x1)"],
     ["Expressions","Examples","Extractions","Excuses"],
     ["A = 2*radius*pi","A = pi*radius^2","A = radius*pi","A = 2*radius"],
@@ -72,6 +73,88 @@ let choicesScience = [
     ["Hippo", "Blue Whale","Lion","Elephant"]
 ];
 
+//question id and answer buttons for quiz game
+var question = document.getElementById("question");
+var but1 = document.querySelector(".button_1");
+var but2 = document.querySelector(".button_2");
+var but3 = document.querySelector(".button_3");
+var but4 = document.querySelector(".button_4");
+var rightWrong = document.querySelector(".right-wrong");
+function mathquiz() {
+    startscreen.classList.add("hide");
+    selectScreen.classList.add("hide");
+    questionscreen.classList.remove("hide");
+    quizresults.classList.add("hide");
+    timerCount = 20;
+    questionNumber = 0;
+    wins = 0;
+    losses = 0;
+
+    //timer();
+    setMathQuestion();
+}
+function setMathQuestion() {
+    displayMathQuestion(questionNumber);
+}
+
+function displayMathQuestion(x){
+    question.innerText = questionMath[x];
+    but1.innerText = choicesMath[x][0];
+    but2.innerText = choicesMath[x][1];
+    but3.innerText = choicesMath[x][2];
+    but4.innerText = choicesMath[x][3];
+
+    but1.addEventListener("click", function(questionNumber){
+        if (choicesMath[x][0] == answerMath[x]){
+            rightWrong.innerText = "Correct!";
+            wins++;
+        } else if (choicesMath[x][0] !== answerMath[x]){
+            rightWrong.innerText = "Incorrect...";
+            losses++;
+        }
+        nextMathQuestion();
+    });
+    but2.addEventListener("click", function(questionNumber){
+        if (choicesMath[x][1] == answerMath[x]){
+            rightWrong.innerText = "Correct!";
+            wins++;
+        } else if (choicesMath[x][1] !== answerMath[x]){
+            rightWrong.innerText = "Incorrect...";
+            losses++;
+        }
+        nextMathQuestion();
+    });
+    but3.addEventListener("click", function(questionNumber){
+        if (choicesMath[x][2] == answerMath[x]){
+            rightWrong.innerText = "Correct!";
+            wins++;
+        } else if (choicesMath[x][2] !== answerMath[x]){
+            rightWrong.innerText = "Incorrect...";
+            losses++;
+        }
+        nextMathQuestion();
+    });
+    but4.addEventListener("click", function(questionNumber){
+        if (choicesMath[x][3] == answerMath[x]){
+            rightWrong.innerText = "Correct!";
+            wins++;
+        } else if (choicesMath[x][3] !== answerMath[x]){
+            rightWrong.innerText = "Incorrect...";
+            losses++;
+        }
+        nextMathQuestion();
+    });
+}
+
+function nextMathQuestion(){
+    questionNumber+=1;
+    if (questionNumber > questionMath.length) {
+        resultransition();
+    } else {
+        displayMathQuestion(questionNumber);
+    }
+}
+
 function genretransition(){
     startscreen.classList.add("hide");
     selectScreen.classList.remove("hide");
@@ -92,7 +175,9 @@ function resultransition(){
     questionscreen.classList.add("hide");
     quizresults.classList.remove("hide"); 
 }
+
 //Hide Start Screen, Selection Screen, Question Screen, Quiz-Results
 startbutton.addEventListener("click",genretransition);
-mathbutton.addEventListener("click", questransition);
-historybutton.addEventListener("click",resultransition);
+mathbutton.addEventListener("click",  mathquiz);
+historybutton.addEventListener("click", historyquiz);
+sciencebutton.addEventListener("click", sciencequiz);
