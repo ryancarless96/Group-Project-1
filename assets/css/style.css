@@ -1,18 +1,19 @@
-claudine
 body {
     background-image: url('../images/trivia-game-background.jpeg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     }
-    .large-font {
+
+.large-font {
     text-align: center;
     font-weight: bold;
     font-size: xxx-large;
     color: white;
     overflow: hidden;
     }
-    #start-screen {
+
+#start-screen {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -20,32 +21,15 @@ body {
     align-items: center;
     }
     
-    .start-btn {
+.start-btn {
     margin-left: 35px;
     }
-    .genres {
-    display: flex;
-    flex-wrap: wrap;
-    }
-    
-    .hide{
-    display:none;
-    }
-main {
-
-}
-
-.large-font {
-    text-align: center;
-    text-decoration: solid;
-}
 
 .genres {
     display: flex;
     flex-wrap: wrap;
-}
+    }
 
 .hide{
     display:none;
-}
-main
+    }
