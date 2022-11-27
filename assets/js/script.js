@@ -16,7 +16,7 @@ let questionMath = [
     "What is the formula for a circle's area?",
     "What is the formula for a cone's volume?"
 ];
-//localStorage.setItem("questionMath", JSON.stringify(questionMath));
+localStorage.setItem("questionMath", JSON.stringify(questionMath));
 let answerMath = [
     "a^2+b^2 = c^2",
     "m = (y2-y1)/(x2-x1)",
