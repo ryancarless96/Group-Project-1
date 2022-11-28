@@ -1,8 +1,6 @@
 # Group-Project-1: Quiz-Game 
 
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
-
-This is a quiz game designed to test your knowledge in 3 different genres. You will be asked questions in Math, History and Science with 4 challenging questions. We want to create a game that will be educational and entertaining to the different users who play. For this Quiz-Game, we used CSS, JavaScript and the HTML to create an application that creates the quiz. 
+This is a quiz game designed to test your knowledge in 3 different genres. You will be asked questions in Math, History and Science with 5 challenging questions. We want to create a game that will be educational and entertaining to the different users who play. For this Quiz-Game, we used CSS, JavaScript and the HTML to create the quiz. 
 
 ## User Story
 
@@ -32,6 +30,14 @@ Ryan Carless was in charge of the HTML and History genre of the game.
 ## Challenges
 
 Our main challenge was gathering information of the three different genres. We had to also come up with several questions and answers that would be entered into the code. After we decided on that material, we continued coordinating the code seperately. 
+
+## Website
+GitHub: 
+1) https://github.com/ryancarless96/Group-Project-1
+Deployed application:
+2) https://ryancarless96.github.io/Group-Project-1/
+
+
 
 
 
