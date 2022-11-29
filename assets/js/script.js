@@ -261,4 +261,7 @@ fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
 fetch('https://en.wikipedia.org/w/api.php')
     .then(response => response.json())
     .then(response => console.log(response))
+feature/html
+    .catch(err => console.error(err));
+
     .catch(err => console.error(err));
