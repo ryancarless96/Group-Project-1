@@ -66,7 +66,7 @@ let answerScience = [
     "Blue Whale"
 ];
 let choicesScience = [
-    ["Hydrogen", "Oxygen", "Liithium", "Boron"],
+    ["Hydrogen", "Oxygen", "Lithium", "Boron"],
     ["Rock", "Diamond", "Crystal", "Dirt"],
     ["Ten", "Five", "Eight", "Seven"],
     ["3", "5", "6", "8"],
@@ -92,7 +92,6 @@ function mathquiz() {
     winCount = 0;
     lossCount = 0;
 
-    //timer();
     setMathQuestion();
 }
 function setMathQuestion() {
@@ -134,7 +133,6 @@ function historyquiz() {
     winCount = 0;
     lossCount = 0;
 
-    //timer();
     setHistoryQuestion();
 }
 function setHistoryQuestion() {
@@ -142,17 +140,48 @@ function setHistoryQuestion() {
 }
 function displayHistoryQuestion(x){
     question.innerText = questionHistory[x];
-    but1.innerText = choicesMath[x][0];
-    but2.innerText = choicesMath[x][1];
-    but3.innerText = choicesMath[x][2];
-    but4.innerText = choicesMath[x][3];
+    but1.innerText = choicesHistory[x][0];
+    but2.innerText = choicesHistory[x][1];
+    but3.innerText = choicesHistory[x][2];
+    but4.innerText = choicesHistory[x][3];
 }
-function nextMathQuestion(){
+function nextHistoryQuestion(){
     questionNumber++;
-    if (questionNumber >= questionMath.length) {
+    if (questionNumber >= questionHistory.length) {
         resultransition();
     } else {
-        displayMathQuestion(questionNumber);
+        displayHistoryQuestion(questionNumber);
+    }
+}
+
+// Science Part
+function sciencequiz() {
+    startscreen.classList.add("hide");
+    selectScreen.classList.add("hide");
+    questionscreen.classList.remove("hide");
+    quizresults.classList.add("hide");
+    questionNumber = 0;
+    winCount = 0;
+    lossCount = 0;
+
+    setScienceQuestion();
+}
+function setScienceQuestion() {
+    displayScienceQuestion(questionNumber);
+}
+function displayScienceQuestion(x){
+    question.innerText = questionScience[x];
+    but1.innerText = choicesScience[x][0];
+    but2.innerText = choicesScience[x][1];
+    but3.innerText = choicesScience[x][2];
+    but4.innerText = choicesScience[x][3];
+}
+function nextScienceQuestion(){
+    questionNumber++;
+    if (questionNumber >= questionScience.length) {
+        resultransition();
+    } else {
+        displayScienceQuestion(questionNumber);
     }
 }
 
@@ -173,7 +202,7 @@ function questransition() {
 startbutton.addEventListener("click",genretransition);
 mathbutton.addEventListener("click",  mathquiz);
 historybutton.addEventListener("click", historyquiz);
-//sciencebutton.addEventListener("click", sciencequiz);
+sciencebutton.addEventListener("click", sciencequiz);
 
 but1.addEventListener("click", function(){
     if (choicesMath[questionNumber][0] == answerMath[questionNumber]){
