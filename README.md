@@ -32,10 +32,14 @@ Ryan Carless was in charge of the HTML and History genre of the game.
 Our main challenge was gathering information of the three different genres. We had to also come up with several questions and answers that would be entered into the code. After we decided on that material, we continued coordinating the code seperately. 
 
 ## Website
-GitHub: 
-1) https://github.com/ryancarless96/Group-Project-1
-Deployed application:
-2) https://ryancarless96.github.io/Group-Project-1/
+ 
+[Github]https://ryancarless96.github.io/Group-Project-1/
+
+## Deployed Application
+![](https://github.com/ryancarless96/Group-Project-1)
+
+
+
 
 
 
