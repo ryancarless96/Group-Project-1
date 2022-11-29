@@ -258,10 +258,7 @@ fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
     .then(response => console.log(response))
     .catch(err => console.error(err));
 
-fetch('https://en.wikipedia.org/w/api.php')
+fetch(' http://www.omdbapi.com/?i=tt3896198&apikey=7784c412')
     .then(response => response.json())
     .then(response => console.log(response))
-feature/html
-    .catch(err => console.error(err));
-
     .catch(err => console.error(err));
