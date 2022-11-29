@@ -205,44 +205,124 @@ historybutton.addEventListener("click", historyquiz);
 sciencebutton.addEventListener("click", sciencequiz);
 
 but1.addEventListener("click", function(){
-    if (choicesMath[questionNumber][0] == answerMath[questionNumber]){
-        rightWrong.innerText = "Correct!";
-        winCount++;
-    } else if (choicesMath[questionNumber][0] !== answerMath[questionNumber]){
-        rightWrong.innerText = "Incorrect...";
-        lossCount++;
+    if(question.innerHTML == questionMath[questionNumber]){
+        if (choicesMath[questionNumber][0] == answerMath[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesMath[questionNumber][0] !== answerMath[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextMathQuestion();
+    } else if (question.innerHTML == questionScience[questionNumber]){
+        if (choicesScience[questionNumber][0] == answerScience[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesScience[questionNumber][0] !== answerScience[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextScienceQuestion();
+    } else if (question.innerHTML == questionHistory[questionNumber]){
+        if (choicesHistory[questionNumber][0] == answerHistory[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesHistory[questionNumber][0] !== answerHistory[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextHistoryQuestion();
     }
-    nextMathQuestion();
 });
 but2.addEventListener("click", function(){
-    if (choicesMath[questionNumber][1] == answerMath[questionNumber]){
-        rightWrong.innerText = "Correct!";
-        winCount++;
-    } else if (choicesMath[questionNumber][1] !== answerMath[questionNumber]){
-        rightWrong.innerText = "Incorrect...";
-        lossCount++;
+    if(question.innerHTML == questionMath[questionNumber]){
+        if (choicesMath[questionNumber][1] == answerMath[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesMath[questionNumber][1] !== answerMath[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextMathQuestion();
+    } else if (question.innerHTML == questionScience[questionNumber]){
+        if (choicesScience[questionNumber][1] == answerScience[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesScience[questionNumber][1] !== answerScience[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextScienceQuestion();
+    } else if (question.innerHTML == questionHistory[questionNumber]){
+        if (choicesHistory[questionNumber][1] == answerHistory[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesHistory[questionNumber][1] !== answerHistory[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextHistoryQuestion();
     }
-    nextMathQuestion();
 });
 but3.addEventListener("click", function(){
-    if (choicesMath[questionNumber][2] == answerMath[questionNumber]){
-        rightWrong.innerText = "Correct!";
-        winCount++;
-    } else if (choicesMath[questionNumber][2] !== answerMath[questionNumber]){
-        rightWrong.innerText = "Incorrect...";
-        lossCount++;
+    if(question.innerHTML == questionMath[questionNumber]){
+        if (choicesMath[questionNumber][2] == answerMath[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesMath[questionNumber][2] !== answerMath[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextMathQuestion();
+    } else if (question.innerHTML == questionScience[questionNumber]){
+        if (choicesScience[questionNumber][2] == answerScience[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesScience[questionNumber][2] !== answerScience[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextScienceQuestion();
+    } else if (question.innerHTML == questionHistory[questionNumber]){
+        if (choicesHistory[questionNumber][2] == answerHistory[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesHistory[questionNumber][2] !== answerHistory[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextHistoryQuestion();
     }
-    nextMathQuestion();
 });
 but4.addEventListener("click", function(){
-    if (choicesMath[questionNumber][3] == answerMath[questionNumber]){
-        rightWrong.innerText = "Correct!";
-        winCount++;
-    } else if (choicesMath[questionNumber][3] !== answerMath[questionNumber]){
-        rightWrong.innerText = "Incorrect...";
-        lossCount++;
+    if(question.innerHTML == questionMath[questionNumber]){
+        if (choicesMath[questionNumber][3] == answerMath[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesMath[questionNumber][3] !== answerMath[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextMathQuestion();
+    } else if (question.innerHTML == questionScience[questionNumber]){
+        if (choicesScience[questionNumber][3] == answerScience[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesScience[questionNumber][3] !== answerScience[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextScienceQuestion();
+    } else if (question.innerHTML == questionHistory[questionNumber]){
+        if (choicesHistory[questionNumber][3] == answerHistory[questionNumber]){
+            rightWrong.innerText = "Correct!";
+            winCount++;
+        } else if (choicesHistory[questionNumber][3] !== answerHistory[questionNumber]){
+            rightWrong.innerText = "Incorrect...";
+            lossCount++;
+        }
+        nextHistoryQuestion();
     }
-    nextMathQuestion();
 });
 
 const options = {
