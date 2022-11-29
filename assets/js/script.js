@@ -72,7 +72,7 @@ let choicesScience = [
     ["3", "5", "6", "8"],
     ["Hippo", "Blue Whale", "Lion", "Elephant"]
 ];
-
+var questionNumber;
 //question id and answer buttons for quiz game
 var question = document.getElementById("question");
 var but1 = document.querySelector(".button_1");
@@ -80,15 +80,17 @@ var but2 = document.querySelector(".button_2");
 var but3 = document.querySelector(".button_3");
 var but4 = document.querySelector(".button_4");
 var rightWrong = document.querySelector(".right-wrong");
+var winCount;
+var lossCount;
+
 function mathquiz() {
     startscreen.classList.add("hide");
     selectScreen.classList.add("hide");
     questionscreen.classList.remove("hide");
     quizresults.classList.add("hide");
-    timerCount = 20;
     questionNumber = 0;
-    wins = 0;
-    losses = 0;
+    winCount = 0;
+    lossCount = 0;
 
     //timer();
     setMathQuestion();
@@ -96,59 +98,58 @@ function mathquiz() {
 function setMathQuestion() {
     displayMathQuestion(questionNumber);
 }
-
 function displayMathQuestion(x){
     question.innerText = questionMath[x];
     but1.innerText = choicesMath[x][0];
     but2.innerText = choicesMath[x][1];
     but3.innerText = choicesMath[x][2];
     but4.innerText = choicesMath[x][3];
-
-    but1.addEventListener("click", function(questionNumber){
-        if (choicesMath[x][0] == answerMath[x]){
-            rightWrong.innerText = "Correct!";
-            wins++;
-        } else if (choicesMath[x][0] !== answerMath[x]){
-            rightWrong.innerText = "Incorrect...";
-            losses++;
-        }
-        nextMathQuestion();
-    });
-    but2.addEventListener("click", function(questionNumber){
-        if (choicesMath[x][1] == answerMath[x]){
-            rightWrong.innerText = "Correct!";
-            wins++;
-        } else if (choicesMath[x][1] !== answerMath[x]){
-            rightWrong.innerText = "Incorrect...";
-            losses++;
-        }
-        nextMathQuestion();
-    });
-    but3.addEventListener("click", function(questionNumber){
-        if (choicesMath[x][2] == answerMath[x]){
-            rightWrong.innerText = "Correct!";
-            wins++;
-        } else if (choicesMath[x][2] !== answerMath[x]){
-            rightWrong.innerText = "Incorrect...";
-            losses++;
-        }
-        nextMathQuestion();
-    });
-    but4.addEventListener("click", function(questionNumber){
-        if (choicesMath[x][3] == answerMath[x]){
-            rightWrong.innerText = "Correct!";
-            wins++;
-        } else if (choicesMath[x][3] !== answerMath[x]){
-            rightWrong.innerText = "Incorrect...";
-            losses++;
-        }
-        nextMathQuestion();
-    });
+}
+function nextMathQuestion(){
+    questionNumber++;
+    if (questionNumber >= questionMath.length) {
+        resultransition();
+    } else {
+        displayMathQuestion(questionNumber);
+    }
 }
 
+function resultransition() {
+    startscreen.classList.add("hide");
+    selectScreen.classList.add("hide");
+    questionscreen.classList.add("hide");
+    quizresults.classList.remove("hide");
+    wins.innerText = winCount;
+    losses.innerText = lossCount;
+}
+
+//History Section
+
+function historyquiz() {
+    startscreen.classList.add("hide");
+    selectScreen.classList.add("hide");
+    questionscreen.classList.remove("hide");
+    quizresults.classList.add("hide");
+    questionNumber = 0;
+    winCount = 0;
+    lossCount = 0;
+
+    //timer();
+    setHistoryQuestion();
+}
+function setHistoryQuestion() {
+    displayHistoryQuestion(questionNumber);
+}
+function displayHistoryQuestion(x){
+    question.innerText = questionHistory[x];
+    but1.innerText = choicesMath[x][0];
+    but2.innerText = choicesMath[x][1];
+    but3.innerText = choicesMath[x][2];
+    but4.innerText = choicesMath[x][3];
+}
 function nextMathQuestion(){
-    questionNumber+=1;
-    if (questionNumber > questionMath.length) {
+    questionNumber++;
+    if (questionNumber >= questionMath.length) {
         resultransition();
     } else {
         displayMathQuestion(questionNumber);
@@ -161,14 +162,6 @@ function genretransition(){
     questionscreen.classList.add("hide");
     quizresults.classList.add("hide");
 }
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '51de4ff89emsh832450e987c5f19p1b38e8jsnec37dd644ea6',
-        'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
-    }
-};
-
 function questransition() {
     startscreen.classList.add("hide");
     selectScreen.classList.add("hide");
@@ -176,18 +169,60 @@ function questransition() {
     quizresults.classList.add("hide");
 }
 
-function resultransition() {
-    startscreen.classList.add("hide");
-    selectScreen.classList.add("hide");
-    questionscreen.classList.add("hide");
-    quizresults.classList.remove("hide");
-}
-
 //Hide Start Screen, Selection Screen, Question Screen, Quiz-Results
 startbutton.addEventListener("click",genretransition);
 mathbutton.addEventListener("click",  mathquiz);
 historybutton.addEventListener("click", historyquiz);
-sciencebutton.addEventListener("click", sciencequiz);
+//sciencebutton.addEventListener("click", sciencequiz);
+
+but1.addEventListener("click", function(){
+    if (choicesMath[questionNumber][0] == answerMath[questionNumber]){
+        rightWrong.innerText = "Correct!";
+        winCount++;
+    } else if (choicesMath[questionNumber][0] !== answerMath[questionNumber]){
+        rightWrong.innerText = "Incorrect...";
+        lossCount++;
+    }
+    nextMathQuestion();
+});
+but2.addEventListener("click", function(){
+    if (choicesMath[questionNumber][1] == answerMath[questionNumber]){
+        rightWrong.innerText = "Correct!";
+        winCount++;
+    } else if (choicesMath[questionNumber][1] !== answerMath[questionNumber]){
+        rightWrong.innerText = "Incorrect...";
+        lossCount++;
+    }
+    nextMathQuestion();
+});
+but3.addEventListener("click", function(){
+    if (choicesMath[questionNumber][2] == answerMath[questionNumber]){
+        rightWrong.innerText = "Correct!";
+        winCount++;
+    } else if (choicesMath[questionNumber][2] !== answerMath[questionNumber]){
+        rightWrong.innerText = "Incorrect...";
+        lossCount++;
+    }
+    nextMathQuestion();
+});
+but4.addEventListener("click", function(){
+    if (choicesMath[questionNumber][3] == answerMath[questionNumber]){
+        rightWrong.innerText = "Correct!";
+        winCount++;
+    } else if (choicesMath[questionNumber][3] !== answerMath[questionNumber]){
+        rightWrong.innerText = "Incorrect...";
+        lossCount++;
+    }
+    nextMathQuestion();
+});
+
+const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '51de4ff89emsh832450e987c5f19p1b38e8jsnec37dd644ea6',
+        'X-RapidAPI-Host': 'wordsapiv1.p.rapidapi.com'
+    }
+};
 
 fetch('https://api.dictionaryapi.dev/api/v2/entries/en/hello')
     .then(response => response.json())
