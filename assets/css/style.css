@@ -20,6 +20,7 @@ body {
     justify-content: center;
     height: 100vh;
     align-items: center;
+    overflow: hidden;
     }
     
 .start-btn {
@@ -33,16 +34,35 @@ body {
     justify-content: center;
     /* height: 100vh; */
     align-items: center;
+    overflow: hidden;
+}
+
+.genres {
+    position:fixed;
+    bottom: 540px;
+
+  
 }
 
 #question-screen {
     display: flex;
     align-content: center;
     justify-content: center;
-    /* height: 100vh; */
     align-items: center;
+    overflow: hidden;
+    position: fixed;
+    right: 500px;
 }
 
+#question {
+    color: white;
+    font-size: 2em;
+}
+
+.options-screen {
+    color: white;
+    font-size: 3em;
+}
 #quiz-results {
     display: flex;
     align-content: center;
@@ -51,6 +71,17 @@ body {
     align-items: center;
 }
 
+article {
+    position: fixed;
+    top: 300px;
+    left: 744px;
+}
+
+footer{
+    position:fixed;
+    top: 653px;
+    left: 650px;
+}
 .hide {
     display:none;
    
