@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Quiz Game</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+    <header>
+        <div id="start-screen">
+            <div class="large-font"> Quiz Game Challenge</div>
+            <button class="start-btn"> Start</button>
+        </div>
+    </header>
+    <nav>
+        <div class="panel">
+            <div class="result">
+            </div>
+        </div>
+        <section>
+            <div id="selection-screen" class="hide">
+                <div class="genres">
+                    <button class="math-btn">Math</button>
+                    <button class="history-btn">History</button>
+                    <button class="science-btn">Science</button>
+                </div>
+            </div>
+        </section>
+        <article>
+            <div id="question-screen" class="hide">
+            </div>
+            <div id="question" class="quiz-questions">Question</div>
+            <div class="options-screen"></div>
+            <button class="button_1">Answer 1</button>
+            <button class="button_2">Answer 2</button>
+            <button class="button_3">Answer 3</button>
+            <button class="button_4">Answer 4</button>
+            <h2 class="right-wrong"></h2>
+            </div>
+        </article>
+        <footer>
+            <div id="quiz-results" class="hide">
+                <div class="win-loss-container">
+                    <div>
+                        <h2> Congradulations! You got a score of:</h2>
+                        <h2 class="win">Wins</h2>
+                        <h2 class="lose">Losses</h2>
+                 </div>
+        </footer>
+    </nav>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
